@@ -19,6 +19,7 @@ void MyWindow::Setup(const std::string &l_title, const Vector2u &l_size) {
     Create();
 }
 
+
 void MyWindow::Create() {
     auto style = (m_isFullScreen ? Style::Fullscreen : Style::Default);
     m_window.create({m_windowSize.x,m_windowSize.y,32},m_windowTitle,style);

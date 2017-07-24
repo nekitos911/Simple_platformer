@@ -22,7 +22,7 @@ TinyXML/tinystr.cpp\
 TinyXML/tinyxmlparser.cpp \
 TinyXML/tinyxmlerror.cpp \
     level.cpp \
-    player.cpp
+    animation.cpp
 
 
 INCLUDEPATH += D:/SFML1/include
@@ -37,4 +37,5 @@ HEADERS += \
     entity.h \
     level.h \
 TinyXML/tinyxml.h \
-TinyXML/tinystr.h
+TinyXML/tinystr.h \
+    animation.h

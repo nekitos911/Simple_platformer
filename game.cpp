@@ -12,11 +12,12 @@ void Game::RestartClock() { m_elapsed += m_clock.restart().asSeconds(); }
 MyWindow *Game::GetWindow() { return &m_window; }
 
 void Game::HandleInput() {
+    if (m_player.OnGround())  m_player.SetState(State::Stay);
     if (Keyboard::isKeyPressed(Keyboard::Up))
         m_player.SetDirection(Direction::Up);
     else if (Keyboard::isKeyPressed(Keyboard::Down))
         m_player.SetDirection(Direction::Down);
-    if (Keyboard::isKeyPressed(Keyboard::X) && m_player.OnGround()) {
+    if (Keyboard::isKeyPressed(Keyboard::Z) && m_player.OnGround()) {
         m_player.SetState(State::Jump);
 
     }
@@ -27,6 +28,10 @@ void Game::HandleInput() {
     else if (Keyboard::isKeyPressed(Keyboard::Right)) {
         m_player.SetDirection(Direction::Right);
         if (m_player.OnGround())m_player.SetState(State::Walk);
+    }
+    if (Keyboard::isKeyPressed(Keyboard::X)) {
+        m_player.SetState(State::Shoot);
+
     }
 }
 

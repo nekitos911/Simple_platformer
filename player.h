@@ -3,6 +3,8 @@
 
 #include "SFML/Graphics.hpp"
 #include "world.h"
+#include "mywindow.h"
+#include "animation.h"
 
 using namespace sf;
 
@@ -49,7 +51,6 @@ private:
     void CheckCollision(float Dy);
 
     Texture m_playerTexture;
-    Sprite m_playerSprite;
     Direction m_dir;
     State m_state;
     int m_speed;
@@ -57,13 +58,14 @@ private:
     int m_lives;
     float m_currentFrame;
     bool m_flip;
-    float x,y,w,h;
+    float x,y;
     bool m_onGround;
     float dx,dy;
     World m_player;
     World m_solid;
     World m_water;
-    View view;
+    View m_view;
+    AnimationManager anim;
 };
 
 #endif // PLAYER_H

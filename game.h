@@ -4,6 +4,7 @@
 #include "mywindow.h"
 #include "player.h"
 #include "world.h"
+#include "animation.h"
 
 using namespace sf;
 
